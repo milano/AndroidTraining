@@ -115,6 +115,8 @@
         android:id="@+id/Relative3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         android:layout_alignParentBottom="true">
    	    <ImageView 
 	        android:id="@+id/Image3"
@@ -154,8 +156,10 @@
         android:id="@+id/Relative4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/border3"
+        android:layout_toLeftOf="@+id/border4"
         android:layout_alignTop="@+id/Relative3"
         android:layout_alignBottom="@+id/Relative3">
    	    <ImageView 
@@ -177,16 +181,17 @@
         android:id="@+id/border4"
         android:layout_width="1dp"
         android:layout_height="match_parent"
-        android:layout_toRightOf="@+id/Relative4"
+        android:layout_toLeftOf="@+id/Relative5"
         android:layout_alignTop="@+id/Relative4"
         android:layout_alignBottom="@+id/Relative4"
         android:background="#393939"/>
     <!-- 5. ic_launcher のアイコンと、その下に 最近 の文字を表示しているボタン -->
     <RelativeLayout 
         android:id="@+id/Relative5"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/border4"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/Relative4"
         android:layout_alignBottom="@+id/Relative4"
