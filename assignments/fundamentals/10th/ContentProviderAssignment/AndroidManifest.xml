@@ -24,6 +24,10 @@
         </activity>
 
         <!-- TODO:providerを定義してください -->
+        <provider
+            android:name="jp.mixi.assignment.contentprovider.beg.DrinkContentProvider"
+            android:authorities="jp.mixi.sample.contentprovider.Drink"
+            android:exported="true" />
     </application>
 
 </manifest>

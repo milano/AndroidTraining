@@ -2,8 +2,11 @@
 package jp.mixi.practice.intent.med;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
     public static final String ACTION_FIRST = "jp.mixi.practice.intent.med.android.intent.action.FIRST";
@@ -24,21 +27,27 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO ここに、ACTION_FIRST を呼び出す処理を書く
-                
+                Intent i = new Intent();
+                i.setAction(ACTION_FIRST);
+                sendBroadcast(i);
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO ここに、ACTION_SECOND を呼び出す処理を書く
-                
+                Intent i = new Intent();
+                i.setAction(ACTION_SECOND);
+                sendBroadcast(i);
             }
         });
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO ここに、ACTION_THIRD を呼び出す処理を書く
-                
+                Intent i = new Intent();
+                i.setAction(ACTION_THIRD);
+                sendBroadcast(i);
             }
         });
     }

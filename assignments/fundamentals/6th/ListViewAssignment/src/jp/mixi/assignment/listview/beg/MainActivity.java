@@ -9,7 +9,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -34,20 +37,28 @@ public class MainActivity extends Activity {
 
         // TODO:BookArrayAdapterを作成して下さい。
         // (リストアイテムのレイアウトは用意されているlist_item_book.xmlをしてください。)
-        // BookArrayAdapter bookArrayAdapter = new BookArrayAdapter(mActivity,
-        // list);
+        final ArrayAdapter<Book> adapter = new BookArrayAdapter(mActivity, list);
         mListView = (ListView) findViewById(R.id.BookList);
 
         // TODO:ListViewにBookArrayAdapterをセットしてください。
+        mListView.setAdapter(adapter);
         // TODO:ListViewをタップしたとき、BookActivityに遷移するようにしてください。遷移するときにBookクラスのtitleを渡してください。
+        mListView.setOnItemClickListener(new ListView.OnItemClickListener() {
+			@Override
+		    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		        // Adapterからタップした位置のデータを取得する
+		        String str = (String) parent.getItemAtPosition(position);
+		        Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
+		    }
+		});
         // (BookActivityは用意されているものを使用してください)
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        registerForContextMenu(mListView);
-    }
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        registerForContextMenu(mListView);
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -1,8 +1,9 @@
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -10,10 +11,21 @@
     tools:context=".MainActivity">
 
     <!-- TODO: LongText をスクロールできるようにする -->
+    <ScrollView 
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+	    <TextView
+	        android:id="@+id/LongText"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/hello_world"/>
+    </ScrollView>
+
     <!-- TODO: LongText の下に 1 つ Button を配置する -->
-    <TextView
-        android:id="@+id/LongText"
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world"/>
-</RelativeLayout>
+        android:layout_weight="0"
+        android:text="Button"/>
+</LinearLayout>

@@ -5,7 +5,37 @@
     tools:context=".MainActivity">
     <!-- TODO: 左側から順に、下記の View を配置していき、そのまとまりを画面上部に揃える -->
     <!-- 1. プロフィール画像(ic_launcher)と、それを囲う四角形の枠、その下に プロフィール と書かれた文字 -->
+    <ImageView
+        android:id="@+id/Image1" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:contentDescription="プロフィール"
+        android:src="@drawable/ic_launcher"
+        android:background="@drawable/frame" />
+    <TextView
+        android:id="@+id/Text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:layout_below="@+id/Image1"
+        android:text="プロフィール" />
     <!-- 2. 1. の右側の上半分に、ニックネームの表示と、そのさらに右端に設定アイコン -->
+    <TextView
+        android:id="@+id/Text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:layout_toRightOf="@+id/Image1"
+        android:text="Keith Yokoma" />
+    <ImageView
+        android:id="@+id/Image2" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:contentDescription="設定"
+        android:layout_toRightOf="@+id/Text2"
+        android:src="@drawable/ic_launcher" />
     <!-- 3. 1. の右側の下半分に、電話ボタン、メール送信ボタン、共有ボタンの 3 つを均等割付 -->
     <!-- 4. 2. と 3. の間に分割線 -->
     <!-- 条件: 3. 以外では LinearLayout を使ってはならない -->

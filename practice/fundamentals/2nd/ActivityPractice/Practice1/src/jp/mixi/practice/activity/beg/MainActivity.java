@@ -3,7 +3,10 @@ package jp.mixi.practice.activity.beg;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
+import android.view.View;
 
 public class MainActivity extends Activity {
 
@@ -20,4 +23,9 @@ public class MainActivity extends Activity {
         return true;
     }
 
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        getMenuInflater().inflate(R.menu.main, menu);
+    }
 }
